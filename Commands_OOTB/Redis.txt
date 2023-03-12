@@ -1,0 +1,22 @@
+REDIS : d9f9ef5f2fef8da852b43c58c7f1c6c1
+
+systemctl start redis
+
+systemctl stop redis
+
+systemctl status redis
+
+
+redis-cli -h 192.168.142.128
+
+
+auth d9f9ef5f2fef8da852b43c58c7f1c6c1
+
+
+KEYS *
+
+FLUSHDB    - to remove all keys
+
+
+
+CLIENT LIST

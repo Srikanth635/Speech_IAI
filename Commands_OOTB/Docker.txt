@@ -1,0 +1,48 @@
+
+docker run -d -i -v /home/myname/data:/opt/data -e "REDIS_URL=redis://:d9f9ef5f2fef8da852b43c58c7f1c6c1@192.168.142.128:6379" -e "DJANGO_CONN=192.168.142.128:8000" --network="host" --name="ootbinstance01" ootb
+
+
+docker exposed port check: docker container inspect ootbinstance01 | grep -i port
+
+docker inspect ootbinstance01
+
+
+docker stop ootbinstance01
+
+
+docker rm ootbinstance01
+
+
+
+docker exec ootbinstance01 rq info
+
+
+
+docker exec -it ootbinstance01 sh
+
+
+
+docker run -p 9181:9181 ootb rq-dashboard -H 192.168.142.128 -p 6379
+
+
+
+
+To view docker image file structure:
+
+docker run --rm -it --entrypoint /bin/sh ootb
+
+THEN: 
+
+ls /
+cat
+cd
+grep
+
+
+
+grep pattern filename
+
+
+grep -r pattern /path/to/directory
+
+

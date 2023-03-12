@@ -1,0 +1,57 @@
+
+Django : a7a1ca4b1decdcd9e4ca87f28c53242b
+
+
+sudo apt-get install sqlite3 libsqlite3-dev
+
+
+python3 manage.py runserver 192.168.142.128:8000
+
+python3 manage.py shell
+
+
+---> TO PRINT APPS IN THE DJANGO PROJECT:
+
+from django.apps import apps
+for app_config in apps.get_app_configs():
+    print(app_config.name)
+-----------------------------------------------------
+omnetppManager
+django.contrib.admin
+django.contrib.auth
+django.contrib.contenttypes
+django.contrib.sessions
+django.contrib.messages
+django.contrib.staticfiles
+formtools
+-----------------------------------------------------	
+	
+	
+---> TO PRINT MODELS IN ANY APP IN THE DJANGO PROJECT:
+
+app_config = apps.get_app_config('omnetppManager')
+models = app_config.get_models()
+for model in models:
+    print(model.__name__)
+------------------------------------------------------    
+StorageBackend
+SimOmnetppTemplate
+Simulation
+OmnetppConfigType
+OmnetppConfig
+OmnetppConfigParameter
+ConfigKeyValueStorage
+ServerConfig
+ServerConfigValue
+OmnetppBenchmarkConfig
+OmnetppBenchmarkParameters
+OmnetppBenchmarkEditableParameters
+OmnetppBenchmarkForwarderConfig
+OmnetppBenchmarkForwarderParameters
+UserProfile
+UserProfileParameters
+------------------------------------------------------
+
+---> TO PRINT ALL THE RECORDS IN THE MODEL OF AN APP IN DJANGO PROJECT:
+from omnetppManager.models import Modelname
+ModelName.objects.all()
